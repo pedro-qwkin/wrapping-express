@@ -28,13 +28,18 @@ App.disable('x-powered-by');
 
 App.use(Express.json({limit: 3e6}));
 
-const rootController = createRootController(App,'/');
+const rootController = createRootController(App,'/', {
+  title: 'Primeiro exemplo',
+  description: 'Descrição do primeiro exemplo'
+});
 rootController.addBeforeMiddleware(joiPlugin);
   
 const userController = createSubController(rootController,'users', 'users')
 userController.newEndpoint('post', '', (req, res, next) => console.log(req)), {
     requestSchema: {},
-    responseSchema = {},
+    responseSchema: {},
+    desription: 'criei o endPoint e sai correndo, ... de quem ata lendo.',
+    summary: 'Batata'
 }
 const PORT =  8800;
 

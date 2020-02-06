@@ -1,8 +1,5 @@
 'user strict';
 
-import Messages from '../messages';
-createController(App, name, params);
-params = {requestSchema, responseValidator}
 httpRequests = ['get', 'post', 'delete', 'update'];
 class CustomController {
     constructor(App, fatherController, rootPath, name, params) {
